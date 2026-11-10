@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'vacancies',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
