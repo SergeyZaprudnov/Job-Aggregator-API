@@ -6,7 +6,7 @@ authors = [
     {name = "Sergey Zaprudnov",email = "szaprudnov@hotmail.com"}
 ]
 license = "\"MIT\""
-requires-python = "^3.11"
+requires-python = ">=3.11,<4.0"
 dependencies = [
     "djangorestframework (>=3.18.3,<4.0.0)",
     "python-dotenv (>=1.2.4,<2.0.0)",
