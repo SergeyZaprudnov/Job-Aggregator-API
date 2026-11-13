@@ -1,5 +1,6 @@
 import pytest
 from rest_framework.test import APIClient
+
 from .models import Vacancy
 
 
