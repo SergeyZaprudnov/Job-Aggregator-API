@@ -444,6 +444,24 @@ python-crontab = ">=2.3.4"
 tzdata = "*"
 
 [[package]]
+name = "django-filter"
+version = "26.2"
+description = "Django-filter is a reusable Django application for allowing users to filter querysets dynamically."
+optional = false
+python-versions = ">=3.11"
+groups = ["main"]
+files = [
+    {file = "django_filter-26.2-py3-none-any.whl", hash = "sha256:df8f737841d6359df00b84dda9b5ab59067fe60292091f1bdae1e3e6281cedb0"},
+    {file = "django_filter-26.2.tar.gz", hash = "sha256:fd5cc83995fbe9f5f07fb5dcda16fde0f04de1ecf8ef82628b6c0ec921b751af"},
+]
+
+[package.dependencies]
+Django = ">=5.2"
+
+[package.extras]
+drf = ["djangorestframework"]
+
+[[package]]
 name = "django-timezone-field"
 version = "7.2.2"
 description = "A Django app providing DB, form, and REST framework fields for zoneinfo and pytz timezone objects."
@@ -970,4 +988,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<4.0"
-content-hash = "150ccfe50f5aeb6ffc66cc338053f4bd51dc0c64ec461aa963800a90649d6f0e"
+content-hash = "d66eb4e779874e564ba34f4f2cad242926d881c2ee5141435140a1eba6c66076"
