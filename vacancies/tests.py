@@ -78,3 +78,13 @@ def test_vacancy_filter_by_source(api_client, sample_vacancy):
     response = api_client.get('/api/vacancies/?source=unknown')
     assert response.status_code == 200
     assert response.json()['count'] == 0
+
+@pytest.mark.django_db
+def test_vacancy_stats(api_client, sample_vacancy):
+    response = api_client.get('/api/stats/')
+    assert response.status_code == 200
+    data = response.json()
+    assert data['total_vacancies'] == 1
+    assert data['average_salary_from'] == 100000.0
+    assert len(data['top_companies']) == 1
+    assert data['top_companies'][0]['company'] == 'Test Company'
