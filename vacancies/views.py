@@ -1,10 +1,10 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from rest_framework.filters import OrderingFilter, SearchFilter
-from django_filters.rest_framework import DjangoFilterBackend
 
+from .filters import VacancyFilter
 from .models import Vacancy
 from .serializers import VacancySerializer
-from .filters import VacancyFilter
 
 
 class VacancyViewSet(viewsets.ReadOnlyModelViewSet):
