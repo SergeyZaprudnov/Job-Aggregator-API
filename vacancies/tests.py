@@ -70,7 +70,7 @@ def test_vacancy_ordering(api_client, sample_vacancy):
 
 
 @pytest.mark.django_db
-def test_vacancy_filter_by_source(api_client< sample_vacancy):
+def test_vacancy_filter_by_source(api_client, sample_vacancy):
     response = api_client.get('/api/vacancies/?source=superjob')
     assert response.status_code == 200
     assert response.json()['count'] == 1
