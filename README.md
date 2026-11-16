@@ -5,6 +5,25 @@
 Backend service for aggregating job vacancies from SuperJob.  
 This document describes how to deploy the service to a production server.
 
+## Features
+- REST API for job vacancies with pagination, search, and ordering
+- Filtering by salary (min/max) and source
+- Aggregated statistics endpoint (`/api/stats/`) with total vacancies, average salary, and top companies
+- Background task to fetch vacancies from SuperJob API (Celery)
+- Periodic scheduling via `django-celery-beat`
+- Fully dockerized for easy setup
+- Automated tests and linting on every push
+
+## API Endpoints
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/vacancies/` | List all vacancies (paginated, 20 per page) |
+| GET | `/api/vacancies/?search=python` | Search by title or company |
+| GET | `/api/vacancies/?ordering=-published_at` | Order by publication date |
+| GET | `/api/vacancies/?salary_min=100000` | Filter by minimum salary |
+| GET | `/api/vacancies/?source=superjob` | Filter by source |
+| GET | `/api/stats/` | Aggregated statistics (total, average salary, top companies) |
+
 ## Stack
 - Python 3.11, Django, Django REST Framework
 - PostgreSQL 15, Redis 7, Celery
