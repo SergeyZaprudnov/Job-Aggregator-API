@@ -67,3 +67,14 @@ def test_vacancy_ordering(api_client, sample_vacancy):
     results = response.json()['results']
     assert results[0]['salary_from'] == 50000
     assert results[1]['salary_from'] == 100000
+
+
+@pytest.mark.django_db
+def test_vacancy_filter_by_source(api_client< sample_vacancy):
+    response = api_client.get('/api/vacancies/?source=superjob')
+    assert response.status_code == 200
+    assert response.json()['count'] == 1
+
+    response = api_client.get('/api/vacancies/?source=unknown')
+    assert response.status_code == 200
+    assert response.json()['count'] == 0
